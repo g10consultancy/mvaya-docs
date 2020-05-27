@@ -124,30 +124,26 @@
         <li class="first-level active"><a href="#user-onboarding-student">User Onboarding - Student</a></li>
             <li class="second-level"><a href="#student-register">Student Register</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserregister">Endpoint - POST ​/auth​/user​/register/</a></li>
             <li class="second-level"><a href="#check-for-unique-email">Check for unique email</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserunique_email_check">Endpoint - POST ​/auth/user/unique_email_check/</a></li>
             <li class="second-level"><a href="#check-for-unique-phone-number">Check for unique phone number</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserunique_phone_check">Endpoint - POST /auth/user/unique_phone_check/</a></li>
             <li class="second-level"><a href="#failed-registration-check">Failed Registration Check</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserregister_1">Endpoint - POST ​/auth​/user​/register/</a></li>
             <li class="second-level"><a href="#verify-otp">Verify OTP</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserregister_2">Endpoint - POST ​/auth​/user​/register/</a></li>
             <li class="second-level"><a href="#resend-otp">Resend OTP</a></li>
                 
-                <li class="third-level"><a href="#endpoint-post-authuserregister_3">Endpoint - POST ​/auth​/user​/register/</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="user-onboarding-student">User Onboarding - Student</h1>
 <h2 id="student-register">Student Register</h2>
-<h3 id="endpoint-post-authuserregister">Endpoint - <strong>POST</strong> <code>​/auth​/user​/register/</code></h3>
-<h4 id="request-schema">Request Schema</h4>
+<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<blockquote>
+<p>Request Schema</p>
+</blockquote>
 <pre><code>{
   "password": 1234,
   "username": "stri22ng2",
@@ -185,7 +181,9 @@
   ]
 }
 </code></pre>
-<h4 id="response-schema-successful">Response Schema (Successful)</h4>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
 <pre><code>{
     "data": {
         "id": 47,
@@ -248,79 +246,71 @@
     }
 }
 </code></pre>
+<hr />
 <h2 id="check-for-unique-email">Check for unique email</h2>
-<h3 id="endpoint-post-authuserunique_email_check">Endpoint - <strong>POST</strong> <code>​/auth/user/unique_email_check/</code></h3>
-<h4 id="request-schema_1">Request Schema</h4>
+<p><strong>GET</strong> <code>auth/user/unique_email_check/?email=user@example.com'</code></p>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
 <pre><code>{
-    "email": "user@example.com"
-}
-</code></pre>
-<h4 id="response-schema-successful_1">Response Schema (Successful)</h4>
-<pre><code>Empty response - 200 OK
-</code></pre>
-<h4 id="response-schema-error">Response Schema (Error)</h4>
-<pre><code>{
-    "error": {
-        "message": "Error in 1 fields.",
-        "status": 400,
-        "error": "Fields error",
-        "error_code": 21,
-        "description": "Fields error.",
-        "fields": [
-            {
-                "field": "email",
-                "message": [
-                    "Seems like this email is already associated with an account."
-                ]
-            }
-        ]
+    "data": {
+        "status": true
     }
 }
 </code></pre>
-<h2 id="check-for-unique-phone-number">Check for unique phone number</h2>
-<h3 id="endpoint-post-authuserunique_phone_check">Endpoint - <strong>POST</strong> <code>/auth/user/unique_phone_check/</code></h3>
-<h4 id="request-schema_2">Request Schema</h4>
+<blockquote>
+<p>Response Schema (UnSuccessful)</p>
+</blockquote>
 <pre><code>{
-    "phone": "9876543220"
+    "data": {
+        "status": false,
+        "message": "This email is already taken."
+    }
 }
 </code></pre>
-<h4 id="response-schema-successful_2">Response Schema (Successful)</h4>
-<pre><code>Empty response - 200 OK
-</code></pre>
-<h4 id="response-schema-error_1">Response Schema (Error)</h4>
+<hr />
+<h2 id="check-for-unique-phone-number">Check for unique phone number</h2>
+<p><strong>GET</strong> <code>auth/user/unique_phone_check/?phone=9876543210</code></p>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
 <pre><code>{
-    "error": {
-        "message": "Error in 1 fields.",
-        "status": 400,
-        "error": "Fields error",
-        "error_code": 21,
-        "description": "Fields error.",
-        "fields": [
-            {
-                "field": "phone",
-                "message": [
-                    "Seems like this phone number is already associated with an account."
-                ]
-            }
-        ]
+    "data": {
+        "status": true
+    }
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (UnSuccessful)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "status": false,
+        "message": "This phone number is already taken."
     }
 }
 </code></pre>
 <h2 id="failed-registration-check">Failed Registration Check</h2>
-<h3 id="endpoint-post-authuserregister_1">Endpoint - <strong>POST</strong> <code>​/auth​/user​/register/</code></h3>
-<h4 id="request-schema_3">Request Schema</h4>
-<h4 id="response-schema-successful_3">Response Schema (Successful)</h4>
-<h4 id="response-schema-error_2">Response Schema (Error)</h4>
+<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<blockquote>
+<p>Request Schema</p>
+<p>Response Schema (Successful)</p>
+<p>Response Schema (Error)</p>
+</blockquote>
 <h2 id="verify-otp">Verify OTP</h2>
-<h3 id="endpoint-post-authuserregister_2">Endpoint - <strong>POST</strong> <code>​/auth​/user​/register/</code></h3>
-<h4 id="request-schema_4">Request Schema</h4>
-<h4 id="response-schema-successful_4">Response Schema (Successful)</h4>
-<h4 id="response-schema-error_3">Response Schema (Error)</h4>
+<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<blockquote>
+<p>Request Schema</p>
+<p>Response Schema (Successful)</p>
+<p>Response Schema (Error)</p>
+</blockquote>
 <h2 id="resend-otp">Resend OTP</h2>
-<h3 id="endpoint-post-authuserregister_3">Endpoint - <strong>POST</strong> <code>​/auth​/user​/register/</code></h3>
-<h4 id="request-schema_5">Request Schema</h4>
-<h4 id="response-schema-successful_5">Response Schema (Successful)</h4>
-<h4 id="response-schema-error_4">Response Schema (Error)</h4></div>
+<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<blockquote>
+<p>Request Schema</p>
+<p>Response Schema (Successful)</p>
+<p>Response Schema (Error)</p>
+</blockquote></div>
         
         
     </div>
