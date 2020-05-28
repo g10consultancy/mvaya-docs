@@ -128,6 +128,8 @@
                 
             <li class="second-level"><a href="#check-for-unique-phone-number">Check for unique phone number</a></li>
                 
+            <li class="second-level"><a href="#check-for-unique-username">Check for unique username</a></li>
+                
             <li class="second-level"><a href="#failed-registration-check">Failed Registration Check</a></li>
                 
             <li class="second-level"><a href="#verify-otp">Verify OTP</a></li>
@@ -249,6 +251,7 @@
 <hr />
 <h2 id="check-for-unique-email">Check for unique email</h2>
 <p><strong>GET</strong> <code>auth/user/unique_email_check/?email=user@example.com'</code></p>
+<p>Do no proceed without successful response.</p>
 <blockquote>
 <p>Response Schema (Successful)</p>
 </blockquote>
@@ -271,6 +274,7 @@
 <hr />
 <h2 id="check-for-unique-phone-number">Check for unique phone number</h2>
 <p><strong>GET</strong> <code>auth/user/unique_phone_check/?phone=9876543210</code></p>
+<p>Do no proceed without successful response.</p>
 <blockquote>
 <p>Response Schema (Successful)</p>
 </blockquote>
@@ -290,27 +294,111 @@
     }
 }
 </code></pre>
+<hr />
+<h2 id="check-for-unique-username">Check for unique username</h2>
+<p><strong>GET</strong> <code>auth/user/unique_username_check/?username=mrprasla</code></p>
+<p>Do no proceed without successful response.</p>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "status": true
+    }
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (UnSuccessful)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "status": false,
+        "message": "This username is already taken."
+    }
+}
+</code></pre>
+<hr />
 <h2 id="failed-registration-check">Failed Registration Check</h2>
 <p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<p>Sometimes, shit happens. This endpoint is used to check if a user was trying to register and for some reason he aborted
+ the registration process due to lost connectivity or corrupt request.</p>
 <blockquote>
 <p>Request Schema</p>
-<p>Response Schema (Successful)</p>
-<p>Response Schema (Error)</p>
 </blockquote>
+<pre><code>{
+    "phone": "9876543210",
+    "email": "user@exeample.com"
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (OTP is Unverified)</p>
+</blockquote>
+<p>This means the user already has an account but he/she is not verified by OTP. In this case, straightaway move the user 
+to OTP verification screen and hit the resend OTP API mentioned below. The <code>user_id</code> is used to capture phone number 
+from the failed account.</p>
+<pre><code>{
+    "data": {
+        "user_id": 2,
+        "status": "otp_unverified"
+    }
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (OTP Verified)</p>
+</blockquote>
+<p>The user is already OTP verified and he's trying to register again. Simply move him to login screen.</p>
+<pre><code>{
+    "data": {
+        "status": "otp_verified"
+    }
+}
+</code></pre>
+<hr />
 <h2 id="verify-otp">Verify OTP</h2>
-<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<p><strong>POST</strong> <code>/auth/user/{user_id}/verify_otp/</code></p>
 <blockquote>
 <p>Request Schema</p>
+</blockquote>
+<pre><code>{
+    "code": 417172
+}
+</code></pre>
+<blockquote>
 <p>Response Schema (Successful)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "status": true
+    }
+}
+</code></pre>
+<hr />
+<h2 id="resend-otp">Resend OTP</h2>
+<p><strong>GET</strong> <code>/auth/user/{user_id}/resend_otp/</code></p>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "code": 417172
+    }
+}
+</code></pre>
+<blockquote>
 <p>Response Schema (Error)</p>
 </blockquote>
-<h2 id="resend-otp">Resend OTP</h2>
-<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
-<blockquote>
-<p>Request Schema</p>
-<p>Response Schema (Successful)</p>
-<p>Response Schema (Error)</p>
-</blockquote></div>
+<p>In this case, the user does not exist.</p>
+<pre><code>{
+    "error": {
+        "message": "No AppUser matches the given query.",
+        "status": 404,
+        "error": "Not Found",
+        "error_code": 25,
+        "description": "Object not found. The resource you are looking for does not exist or is deleted."
+    }
+}
+</code></pre>
+<hr /></div>
         
         
     </div>
