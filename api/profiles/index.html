@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Profiles - Mvaya Documentation</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../..">Mvaya Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../authentication/">Authentication</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../registration/">Registration</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Profiles</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../registration/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#coachingonline-classes-instructor-profiles-api">Coaching/Online Classes &amp; Instructor Profiles API</a></li>
+            <li class="second-level"><a href="#coaching-instructor-list-detail">Coaching Instructor (List &amp; Detail)</a></li>
+                
+            <li class="second-level"><a href="#online-instructor-list-detail">Online Instructor (List &amp; Detail)</a></li>
+                
+            <li class="second-level"><a href="#coaching-institutes-list-detail">Coaching Institutes (List &amp; Detail)</a></li>
+                
+            <li class="second-level"><a href="#online-institutes-list-detail">Online Institutes (List &amp; Detail)</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="coachingonline-classes-instructor-profiles-api">Coaching/Online Classes &amp; Instructor Profiles API</h1>
+<h2 id="coaching-instructor-list-detail">Coaching Instructor (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>/profile/coaching_instructor/</code></p>
+<blockquote>
+<p>Response Schema (List)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Prof. Ashok Sawant",
+            "avatar": http://165.22.214.137:8005/files/image.jpg,
+            "designation": "Sr. Professor",
+            "organization": "Chate Classes"
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>/profile/coaching_instructor/{coaching_instructor_id}</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 1,
+        "board": [
+            {
+                "id": 1,
+                "title": "SSC"
+            },
+            {
+                "id": 2,
+                "title": "CBSE"
+            }
+        ],
+        "grade": [
+            {
+                "id": 5,
+                "title": "9th"
+            },
+            {
+                "id": 6,
+                "title": "10th"
+            }
+        ],
+        "name": "Prof. Ashok Sawant",
+        "description": "Stephane is a solutions architect, consultant and software developer that has a particular interest in all things related to Big Data, Cloud &amp; API. He's also a many-times best seller instructor on Udemy for his courses in Apache Kafka and AWS.",
+        "primary_contact": "9876543210",
+        "secondary_contact": "",
+        "email": "abc@gmail.com",
+        "avatar": "http://165.22.214.137:8005/files/image.jpg",
+        "status": false,
+        "designation": "Sr. Professor",
+        "organization": "Chate Classes",
+        "start_date": "2020-05-01",
+        "end_date": "2020-07-31",
+        "coaching_institute": 1
+    }
+}
+</code></pre>
+<hr />
+<h2 id="online-instructor-list-detail">Online Instructor (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>/profile/online_instructor/</code></p>
+<blockquote>
+<p>Response Schema (List)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Stephane Maarek",
+            "avatar": "http://165.22.214.137:8005/files/16122994_284f_14.jpg",
+            "designation": "Kafka Guru, AWS Certified Developer",
+            "organization": "Udemy"
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>/profile/coaching_instructor/{coaching_instructor_id}</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 1,
+        "board": [
+            {
+                "id": 1,
+                "title": "SSC"
+            },
+            {
+                "id": 2,
+                "title": "CBSE"
+            }
+        ],
+        "grade": [
+            {
+                "id": 5,
+                "title": "9th"
+            },
+            {
+                "id": 6,
+                "title": "10th"
+            }
+        ],
+        "name": "Stephane Maarek",
+        "description": "Stephane is a solutions architect, consultant and software developer that has a particular interest in all things related to Big Data, Cloud &amp; API. He's also a many-times best seller instructor on Udemy for his courses in Apache Kafka and AWS.",
+        "primary_contact": "123",
+        "secondary_contact": "",
+        "email": "abc@gmail.com",
+        "avatar": "http://165.22.214.137:8005/files/16122994_284f_14.jpg",
+        "status": false,
+        "designation": "Kafka Guru, AWS Certified Developer",
+        "organization": "Udemy",
+        "start_date": "2020-04-10",
+        "end_date": "2020-04-10",
+        "online_institute": 1
+    }
+}
+</code></pre>
+<hr />
+<h2 id="coaching-institutes-list-detail">Coaching Institutes (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>/profile/coaching_institute/</code></p>
+<blockquote>
+<p>Response Schema (List)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Mahesh Tutorials",
+            "avatar": "http://165.22.214.137:8005/files/mteducarelogo.png"
+        }
+    ]
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<p><strong>GET</strong> <code>/profile/coaching_institute/{coaching_institute_id}</code></p>
+<pre><code>{
+    "data": {
+        "id": 1,
+        "board": [
+            {
+                "id": 1,
+                "title": "SSC"
+            },
+            {
+                "id": 2,
+                "title": "CSBE"
+            }
+        ],
+        "grade": [
+            {
+                "id": 1,
+                "title": "7th"
+            },
+            {
+                "id": 2,
+                "title": "10th"
+            }
+        ],
+        "batches": [
+            {
+                "id": 2,
+                "board": {
+                    "id": 1,
+                    "title": "SSC"
+                },
+                "grade": {
+                    "id": 1,
+                    "title": "7th"
+                },
+                "subject": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "category": {
+                    "id": 1,
+                    "title": "test"
+                },
+                "name": "string",
+                "code": "string",
+                "start_date": "2020-05-19",
+                "end_date": "2020-05-19",
+                "institute": 1
+            },
+            {
+                "id": 3,
+                "board": {
+                    "id": 1,
+                    "title": "SSC"
+                },
+                "grade": {
+                    "id": 1,
+                    "title": "7th"
+                },
+                "subject": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "category": {
+                    "id": 1,
+                    "title": "test"
+                },
+                "name": "string",
+                "code": "str2ing",
+                "start_date": "2020-05-19",
+                "end_date": "2020-05-19",
+                "institute": 1
+            }
+        ],
+        "courses": [
+            {
+                "id": 1,
+                "board": {
+                    "id": 1,
+                    "title": "SSC"
+                },
+                "grade": {
+                    "id": 1,
+                    "title": "7th"
+                },
+                "subject": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "title": "Goa — the state for your soul — literally!",
+                "image": null,
+                "institute": 1
+            }
+        ],
+        "name": "John Doe",
+        "description": "wwwww",
+        "primary_contact": "9876543210",
+        "secondary_contact": "",
+        "email": "johndoe@outlook.com",
+        "avatar": null,
+        "status": true,
+        "website": "https://mteducare.com/",
+        "video": null,
+        "banner": null,
+        "android_app": true,
+        "ios_app": true,
+        "api_integration": true,
+        "sale_type": 1
+    }
+}
+</code></pre>
+<hr />
+<h2 id="online-institutes-list-detail">Online Institutes (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>profile/online_institute/</code></p>
+<p>Do no proceed without successful response.</p>
+<blockquote>
+<p>Response Schema (Successful)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Toppr",
+            "avatar": null
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>profile/online_institute/{online_institute_id}</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 1,
+        "board": [
+            {
+                "id": 1,
+                "title": "SSC"
+            }
+        ],
+        "grade": [
+            {
+                "id": 1,
+                "title": "7th"
+            }
+        ],
+        "instructors": [
+            {
+                "id": 1,
+                "name": "Stephane Maarek",
+                "avatar": null,
+                "designation": "Kafka Guru, AWS Certified Developer",
+                "organization": "Udemy"
+            }
+        ],
+        "courses": [
+            {
+                "id": 1,
+                "board": {
+                    "id": 1,
+                    "title": "SSC"
+                },
+                "grade": {
+                    "id": 1,
+                    "title": "7th"
+                },
+                "subject": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "title": "English",
+                "image": null,
+                "institute": 1
+            }
+        ],
+        "name": "Neeraj Vernekar",
+        "description": "kkkk",
+        "primary_contact": "9876543210",
+        "secondary_contact": "",
+        "email": "neeraj.v@outlook.com",
+        "avatar": null,
+        "status": true,
+        "website": null,
+        "video": null,
+        "banner": null
+    }
+}
+</code></pre>
+<hr /></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

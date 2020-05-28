@@ -89,6 +89,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../profiles/">Profiles</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -106,8 +112,8 @@
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../profiles/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -130,6 +136,8 @@
                 
             <li class="second-level"><a href="#check-for-unique-username">Check for unique username</a></li>
                 
+            <li class="second-level"><a href="#reminder">Reminder</a></li>
+                
             <li class="second-level"><a href="#failed-registration-check">Failed Registration Check</a></li>
                 
             <li class="second-level"><a href="#verify-otp">Verify OTP</a></li>
@@ -142,7 +150,7 @@
 
 <h1 id="user-onboarding-student">User Onboarding - Student</h1>
 <h2 id="student-register">Student Register</h2>
-<p><strong>POST</strong> <code>​/auth​/user​/register/</code></p>
+<p><strong>POST</strong> <code>​/auth​/register/</code></p>
 <blockquote>
 <p>Request Schema</p>
 </blockquote>
@@ -314,6 +322,40 @@
     "data": {
         "status": false,
         "message": "This username is already taken."
+    }
+}
+</code></pre>
+<hr />
+<h2 id="reminder">Reminder</h2>
+<p>Incase if you let the user proceed <code>failing to pass the 3 checks above</code>, you'll face an error on the final registration API call.</p>
+<p>Example:</p>
+<pre><code>{
+    "error": {
+        "message": "Error in 3 fields.",
+        "status": 400,
+        "error": "Fields error",
+        "error_code": 21,
+        "description": "Fields error.",
+        "fields": [
+            {
+                "field": "email",
+                "message": [
+                    "A user with that email already exists."
+                ]
+            },
+            {
+                "field": "phone",
+                "message": [
+                    "A user with that phone number already exists."
+                ]
+            },
+            {
+                "field": "username",
+                "message": [
+                    "A user with that username already exists."
+                ]
+            }
+        ]
     }
 }
 </code></pre>
