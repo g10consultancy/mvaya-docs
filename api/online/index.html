@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Online - Mvaya Documentation</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../..">Mvaya Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../authentication/">Authentication</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../registration/">Registration</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Online</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../registration/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#online-institutes">Online Institutes</a></li>
+            <li class="second-level"><a href="#institute-list-detail">Institute (List &amp; Detail)</a></li>
+                
+            <li class="second-level"><a href="#instructor-list-detail">Instructor (List &amp; Detail)</a></li>
+                
+            <li class="second-level"><a href="#courses">Courses</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="online-institutes">Online Institutes</h1>
+<p>This related to all forms on Online content. Also knows as online classes/providers.</p>
+<h2 id="institute-list-detail">Institute (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>/profile/online/institute/</code></p>
+<blockquote>
+<p>Response Schema (List)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Byju's",
+            "avatar": "http://127.0.0.1:8000/files/byjus-logo-E37962D240-seeklogo.com.png"
+        },
+        {
+            "id": 2,
+            "name": "Toppr",
+            "avatar": "http://127.0.0.1:8000/files/Toppr_logo.png"
+        },
+        {
+            "id": 3,
+            "name": "Vedantu",
+            "avatar": "http://127.0.0.1:8000/files/Vedantulogo_orange.png"
+        },
+        {
+            "id": 4,
+            "name": "Robomate",
+            "avatar": "http://127.0.0.1:8000/files/robomate_logo.png"
+        },
+        {
+            "id": 5,
+            "name": "Khab Academy",
+            "avatar": "http://127.0.0.1:8000/files/1200x630wa.png"
+        },
+        {
+            "id": 6,
+            "name": "Ataz Learning",
+            "avatar": "http://127.0.0.1:8000/files/ataz.png"
+        },
+        {
+            "id": 7,
+            "name": "Meritnation",
+            "avatar": "http://127.0.0.1:8000/files/merithnation.png"
+        },
+        {
+            "id": 8,
+            "name": "Simplilearn",
+            "avatar": "http://127.0.0.1:8000/files/simplilear_logo.png"
+        },
+        {
+            "id": 9,
+            "name": "Age of Learning",
+            "avatar": "http://127.0.0.1:8000/files/age_of_laraning_logo.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Enduguru",
+            "avatar": "http://127.0.0.1:8000/files/enduguru_logo.jpeg"
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>/profile/online/institute/1/</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 1,
+        "board": [
+            {
+                "id": 16,
+                "title": "BSE "
+            },
+            {
+                "id": 26,
+                "title": "BSEB"
+            },
+            {
+                "id": 31,
+                "title": "SSLC"
+            },
+            {
+                "id": 30,
+                "title": "KSEEB"
+            },
+            {
+                "id": 22,
+                "title": "HSC"
+            }
+        ],
+        "grade": [
+            {
+                "id": 1,
+                "title": "1st"
+            },
+            {
+                "id": 2,
+                "title": "2nd"
+            },
+            {
+                "id": 3,
+                "title": "3rd"
+            },
+            {
+                "id": 12,
+                "title": "12th"
+            }
+        ],
+        "instructors": [
+            {
+                "id": 1,
+                "first_name": "Prof Salim",
+                "last_name": "Khan",
+                "avatar": null
+            },
+            {
+                "id": 3,
+                "first_name": "Prof Neeraj",
+                "last_name": "Singhaniya",
+                "avatar": "http://165.22.214.137:8005/files/enduguru_logo_RrFJIg3.jpeg"
+            }
+        ],
+        "courses": [
+            {
+                "id": 1,
+                "board": {
+                    "id": 26,
+                    "title": "BSEB"
+                },
+                "grade": {
+                    "id": 6,
+                    "title": "6th"
+                },
+                "subject": {
+                    "id": 24,
+                    "title": "Legal Studies"
+                },
+                "language": {
+                    "id": 8,
+                    "title": "Urdu"
+                },
+                "title": "English",
+                "featured": true,
+                "price": "2999.00",
+                "image": null,
+                "institute": 1
+            }
+        ],
+        "type_str": "Regular, Competitive Exam, Other",
+        "language": [
+            {
+                "id": 1,
+                "title": "English"
+            },
+            {
+                "id": 1,
+                "title": "Maths"
+            }
+        ],
+        "featured": true,
+        "status": true,
+        "name": "Byju's",
+        "description": "BYJU'S is the world's most valuable ed-tech company and the creator of India's most loved school learning app. Launched in 2015, BYJU'S offers highly personalised and effective learning programs for classes 1 - 12 (K-12), and aspirants of competitive exams like JEE, IAS etc. With 50 million registered students and 3.5 million paid subscriptions, BYJU'S has become one of the most preferred education platforms across the globe.",
+        "avatar": "http://127.0.0.1:8000/files/byjus-logo-E37962D240-seeklogo.com.png",
+        "website": "https://byjus.com/",
+        "banner": "http://127.0.0.1:8000/files/top-banner.jpg",
+        "video": "http://127.0.0.1:8000/files/What_is_BYJUS_The_Learning_App.mp4"
+    }
+}
+</code></pre>
+<hr />
+<h2 id="instructor-list-detail">Instructor (List &amp; Detail)</h2>
+<p><strong>GET</strong> <code>/profile/online/instructor/</code></p>
+<blockquote>
+<p>Response Schema (List)</p>
+</blockquote>
+<pre><code>{
+    "data": [
+        {
+            "id": 1,
+            "first_name": "Prof Sandesh",
+            "last_name": "Sankhare",
+            "avatar": null
+        },
+        {
+            "id": 3,
+            "first_name": "Prof Neeraj",
+            "last_name": "Singhaniya",
+            "avatar": "http://165.22.214.137:8005/files/enduguru_logo_RrFJIg3.jpeg"
+        },
+        {
+            "id": 4,
+            "first_name": "Prof Darshan",
+            "last_name": "Gupta",
+            "avatar": "http://165.22.214.137:8005/files/unnamed.jpg"
+        },
+        {
+            "id": 5,
+            "first_name": "Prof Salim",
+            "last_name": "Vishwakarma",
+            "avatar": "http://165.22.214.137:8005/files/images.jpeg"
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>/profile/online/instructor/1/</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 4,
+        "board": [
+            {
+                "id": 18,
+                "title": "TNBSE"
+            },
+            {
+                "id": 22,
+                "title": "HSC"
+            },
+            {
+                "id": 45,
+                "title": "IGCSE"
+            }
+        ],
+        "grade": [
+            {
+                "id": 9,
+                "title": "9th"
+            },
+            {
+                "id": 10,
+                "title": "10th"
+            }
+        ],
+        "education": [
+            {
+                "id": 6,
+                "start": "2020-06-24",
+                "end": "2020-06-17",
+                "location": "Mumbai",
+                "logo": "http://165.22.214.137:8005/files/565vBdDA_rvVS0yP.png",
+                "institute": "Raheja",
+                "degree": "MBA",
+                "instructor": 4
+            },
+            {
+                "id": 5,
+                "start": "2020-06-03",
+                "end": "2020-06-28",
+                "location": "Mumbai",
+                "logo": "http://165.22.214.137:8005/files/GNl8b1uw.png",
+                "institute": "Shree Swaminarayan Gurukul International",
+                "degree": "HSC",
+                "instructor": 4
+            },
+            {
+                "id": 4,
+                "start": "2020-06-02",
+                "end": "2020-06-29",
+                "location": "Mumbai",
+                "logo": "http://165.22.214.137:8005/files/KApLLTyA_fDbp5DV.png",
+                "institute": "The Doon School",
+                "degree": "SSC",
+                "instructor": 4
+            }
+        ],
+        "experience": [
+            {
+                "id": 3,
+                "start": "2020-06-02",
+                "end": "2020-06-30",
+                "location": "Dehli",
+                "logo": "http://165.22.214.137:8005/files/KApLLTyA_TJYGcZn.png",
+                "title": "Vendatu",
+                "company": "institute",
+                "description": "Vedantu is India's leading Online tutoring company which enables students to learn LIVE with some of India's best-curated teachers. ... Vedantu's online tutoring platform enables LIVE interactive learning between a teacher and a student. It offers individual and group classes.",
+                "instructor": 4
+            },
+            {
+                "id": 2,
+                "start": "2020-06-15",
+                "end": "2020-06-30",
+                "location": "Patna",
+                "logo": "http://165.22.214.137:8005/files/iXcVJU9A_COuFJoZ.png",
+                "title": "Aakash",
+                "company": "couching",
+                "description": "AAKASH. Aakash Educational Services Limited (AESL) is a leading educational institution in India that provides comprehensive test preparatory services to students preparing for medical and engineering entrance exams, school/board exams, KVPY, NTSE, Olympiads and other Foundation level exams.",
+                "instructor": 4
+            }
+        ],
+        "courses": [
+            {
+                "id": 8,
+                "board": {
+                    "id": 2,
+                    "title": "CBSE"
+                },
+                "grade": {
+                    "id": 3,
+                    "title": "3rd"
+                },
+                "subject": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "language": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "title": "English Course for III Standard",
+                "featured": false,
+                "price": "7000.00",
+                "image": null,
+                "institute": 5
+            },
+            {
+                "id": 9,
+                "board": {
+                    "id": 29,
+                    "title": "GSEB"
+                },
+                "grade": {
+                    "id": 12,
+                    "title": "12th"
+                },
+                "subject": {
+                    "id": 35,
+                    "title": "Engineering Drawing"
+                },
+                "language": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "title": "Engineering Drawing for XII",
+                "featured": true,
+                "price": "9000.00",
+                "image": null,
+                "institute": 8
+            },
+            {
+                "id": 10,
+                "board": {
+                    "id": 30,
+                    "title": "KSEEB"
+                },
+                "grade": {
+                    "id": 8,
+                    "title": "8th"
+                },
+                "subject": {
+                    "id": 2,
+                    "title": "Maths"
+                },
+                "language": {
+                    "id": 1,
+                    "title": "English"
+                },
+                "title": "Maths for VIII Standard",
+                "featured": true,
+                "price": "7000.00",
+                "image": null,
+                "institute": 7
+            }
+        ],
+        "language": [
+            {
+                "id": 1,
+                "title": "English"
+            },
+            {
+                "id": 2,
+                "title": "Marathi"
+            }
+        ],
+        "first_name": "Prof Darshan",
+        "last_name": "Gupta",
+        "phone": "9275384673",
+        "email": "Darshan@gmail.com",
+        "avatar": "http://165.22.214.137:8005/files/unnamed.jpg",
+        "start": "2020-06-17",
+        "end": "2020-06-30",
+        "status": true,
+        "institute": 2
+    }
+}
+</code></pre>
+<hr />
+<h2 id="courses">Courses</h2>
+<p><strong>GET</strong> <code>/profile/online/courses/</code></p>
+<blockquote>
+<p>Response Schema (List w/ Pagination)</p>
+</blockquote>
+<pre><code>{
+    "page": 1,
+    "next_page": 2,
+    "next_page_link": "http://165.22.214.137:8005/profile/online/courses/?page=2",
+    "previous_page": null,
+    "previous_page_link": null,
+    "count": 10,
+    "max_pages": 2,
+    "total_count": 2,
+    "data": [
+        {
+            "id": 1,
+            "board": {
+                "id": 1,
+                "title": "SSC"
+            },
+            "grade": {
+                "id": 9,
+                "title": "9th"
+            },
+            "subject": {
+                "id": 2,
+                "title": "Maths"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "Knowing Numbers",
+            "featured": true,
+            "price": "2500.00",
+            "image": null,
+            "institute": 1
+        },
+        {
+            "id": 2,
+            "board": {
+                "id": 20,
+                "title": "BSEM"
+            },
+            "grade": {
+                "id": 12,
+                "title": "12th"
+            },
+            "subject": {
+                "id": 33,
+                "title": "Biotechnology"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "Bioteachnology for XII Science",
+            "featured": true,
+            "price": "2500.00",
+            "image": null,
+            "institute": 3
+        },
+        {
+            "id": 5,
+            "board": {
+                "id": 27,
+                "title": "UBSE"
+            },
+            "grade": {
+                "id": 9,
+                "title": "9th"
+            },
+            "subject": {
+                "id": 14,
+                "title": "History"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "History for IX Standard",
+            "featured": false,
+            "price": "3000.00",
+            "image": null,
+            "institute": 5
+        },
+        {
+            "id": 6,
+            "board": {
+                "id": 3,
+                "title": "ICSE"
+            },
+            "grade": {
+                "id": 12,
+                "title": "12th"
+            },
+            "subject": {
+                "id": 34,
+                "title": "Computer Science"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "Computer Science for XII",
+            "featured": true,
+            "price": "8000.00",
+            "image": null,
+            "institute": 6
+        },
+        {
+            "id": 7,
+            "board": {
+                "id": 1,
+                "title": "SSC"
+            },
+            "grade": {
+                "id": 5,
+                "title": "5th"
+            },
+            "subject": {
+                "id": 1,
+                "title": "English"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "English Course for V Standard",
+            "featured": false,
+            "price": "5000.00",
+            "image": null,
+            "institute": 10
+        },
+        {
+            "id": 9,
+            "board": {
+                "id": 29,
+                "title": "GSEB"
+            },
+            "grade": {
+                "id": 12,
+                "title": "12th"
+            },
+            "subject": {
+                "id": 35,
+                "title": "Engineering Drawing"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "Engineering Drawing for XII",
+            "featured": true,
+            "price": "9000.00",
+            "image": null,
+            "institute": 8
+        },
+        {
+            "id": 10,
+            "board": {
+                "id": 30,
+                "title": "KSEEB"
+            },
+            "grade": {
+                "id": 8,
+                "title": "8th"
+            },
+            "subject": {
+                "id": 2,
+                "title": "Maths"
+            },
+            "language": {
+                "id": 1,
+                "title": "English"
+            },
+            "title": "Maths for VIII Standard",
+            "featured": true,
+            "price": "7000.00",
+            "image": null,
+            "institute": 7
+        }
+    ]
+}
+</code></pre>
+<p><strong>GET</strong> <code>/profile/online/courses/1/</code></p>
+<blockquote>
+<p>Response Schema (Detail)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 2,
+        "board": {
+            "id": 20,
+            "title": "BSEM"
+        },
+        "grade": {
+            "id": 12,
+            "title": "12th"
+        },
+        "subject": {
+            "id": 33,
+            "title": "Biotechnology"
+        },
+        "language": {
+            "id": 1,
+            "title": "English"
+        },
+        "title": "Bioteachnology for XII Science",
+        "featured": true,
+        "price": "2500.00",
+        "image": null,
+        "institute": 3
+    }
+}
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

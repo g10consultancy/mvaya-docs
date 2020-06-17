@@ -132,7 +132,7 @@
 
 <h1 id="coachingonline-classes-instructor-profiles-api">Coaching/Online Classes &amp; Instructor Profiles API</h1>
 <h2 id="coaching-instructor-list-detail">Coaching Instructor (List &amp; Detail)</h2>
-<p><strong>GET</strong> <code>/profile/coaching_instructor/</code></p>
+<p><strong>GET</strong> <code>/auth/mycourses/</code></p>
 <blockquote>
 <p>Response Schema (List)</p>
 </blockquote>
@@ -140,54 +140,72 @@
     "data": [
         {
             "id": 1,
-            "name": "Prof. Ashok Sawant",
-            "avatar": "http://165.22.214.137:8005/files/image.jpg",
-            "designation": "Sr. Professor",
-            "organization": "Chate Classes"
+            "name": "Khateeb Classes",
+            "avatar": null,
+            "courses": [
+                {
+                    "id": 1,
+                    "board": {
+                        "id": 1,
+                        "title": "CBSE"
+                    },
+                    "grade": {
+                        "id": 1,
+                        "title": "7th"
+                    },
+                    "subject": {
+                        "id": 1,
+                        "title": "Science"
+                    },
+                    "title": "Engineering Mechanics",
+                    "featured": true,
+                    "price": "29.99",
+                    "image": null,
+                    "language": 1,
+                    "institute": 1,
+                    "instructors": []
+                }
+            ]
         }
     ]
 }
 </code></pre>
-<p><strong>GET/PATCH/PUT/DELETE</strong> <code>/profile/coaching_instructor/{coaching_instructor_id}</code></p>
+<p><strong>GET</strong> <code>/auth/mybatches/</code></p>
 <blockquote>
-<p>Response Schema (Detail)</p>
+<p>Response Schema (List)</p>
 </blockquote>
 <pre><code>{
-    "data": {
-        "id": 1,
-        "board": [
-            {
-                "id": 1,
-                "title": "SSC"
-            },
-            {
-                "id": 2,
-                "title": "CBSE"
-            }
-        ],
-        "grade": [
-            {
-                "id": 5,
-                "title": "9th"
-            },
-            {
-                "id": 6,
-                "title": "10th"
-            }
-        ],
-        "name": "Prof. Ashok Sawant",
-        "description": "Stephane is a solutions architect, consultant and software developer that has a particular interest in all things related to Big Data, Cloud &amp; API. He's also a many-times best seller instructor on Udemy for his courses in Apache Kafka and AWS.",
-        "primary_contact": "9876543210",
-        "secondary_contact": "",
-        "email": "abc@gmail.com",
-        "avatar": "http://165.22.214.137:8005/files/image.jpg",
-        "status": false,
-        "designation": "Sr. Professor",
-        "organization": "Chate Classes",
-        "start_date": "2020-05-01",
-        "end_date": "2020-07-31",
-        "coaching_institute": 1
-    }
+    "data": [
+        {
+            "id": 1,
+            "name": "Khateeb Classes",
+            "avatar": null,
+            "batches": [
+                {
+                    "id": 1,
+                    "board": {
+                        "id": 1,
+                        "title": "CBSE"
+                    },
+                    "grade": {
+                        "id": 1,
+                        "title": "7th"
+                    },
+                    "subject": {
+                        "id": 1,
+                        "title": "Science"
+                    },
+                    "title": "Engineering Mechanics",
+                    "featured": true,
+                    "price": "29.99",
+                    "image": null,
+                    "language": 1,
+                    "institute": 1,
+                    "instructors": []
+                }
+            ]
+        }
+    ]
 }
 </code></pre>
 <hr />
@@ -387,77 +405,10 @@
 <blockquote>
 <p>Response Schema (Successful)</p>
 </blockquote>
-<pre><code>{
-    "data": [
-        {
-            "id": 1,
-            "name": "Toppr",
-            "avatar": null
-        }
-    ]
-}
-</code></pre>
 <p><strong>GET/PATCH/PUT/DELETE</strong> <code>profile/online_institute/{online_institute_id}</code></p>
 <blockquote>
 <p>Response Schema (Detail)</p>
 </blockquote>
-<pre><code>{
-    "data": {
-        "id": 1,
-        "board": [
-            {
-                "id": 1,
-                "title": "SSC"
-            }
-        ],
-        "grade": [
-            {
-                "id": 1,
-                "title": "7th"
-            }
-        ],
-        "instructors": [
-            {
-                "id": 1,
-                "name": "Stephane Maarek",
-                "avatar": null,
-                "designation": "Kafka Guru, AWS Certified Developer",
-                "organization": "Udemy"
-            }
-        ],
-        "courses": [
-            {
-                "id": 1,
-                "board": {
-                    "id": 1,
-                    "title": "SSC"
-                },
-                "grade": {
-                    "id": 1,
-                    "title": "7th"
-                },
-                "subject": {
-                    "id": 1,
-                    "title": "English"
-                },
-                "title": "English",
-                "image": null,
-                "institute": 1
-            }
-        ],
-        "name": "Neeraj Vernekar",
-        "description": "kkkk",
-        "primary_contact": "9876543210",
-        "secondary_contact": "",
-        "email": "neeraj.v@outlook.com",
-        "avatar": null,
-        "status": true,
-        "website": null,
-        "video": null,
-        "banner": null
-    }
-}
-</code></pre>
 <hr /></div>
         
         

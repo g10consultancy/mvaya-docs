@@ -91,7 +91,7 @@
                         
                             
 <li >
-    <a href="../profiles/">Profiles</a>
+    <a href="../online/">Online</a>
 </li>
 
                         
@@ -113,7 +113,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../profiles/">
+                        <a rel="next" href="../online/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -155,40 +155,39 @@
 <p>Request Schema</p>
 </blockquote>
 <pre><code>{
-  "password": 1234,
-  "username": "stri22ng2",
-  "first_name": "string",
-  "last_name": "string",
-  "email": "user@ex2ample.com",
-  "phone": "string",
-  "address": [
-    {
-      "line_1": "string",
-      "line_2": "string",
-      "landmark": "string",
-      "city": "string",
-      "zipcode": "string",
-      "primary": true,
-      "state": "Maharashtra",
-      "country": "India"
-    }
-  ],
-  "student_profile": {
-    "board_id": 1,
-    "grade_id": 1,
-    "title": "string",
-    "dob": "2020-04-20"
-  },
-  "guardian": [
-    {
-      "first_name": "string",
-      "last_name": "string",
-      "phone_primary": "string",
-      "phone_secondary": "string",
-      "email": "string",
-      "relationship": 1
-    }
-  ]
+    "address": [
+        {
+            "line_1": "string",
+            "line_2": "string",
+            "landmark": "string",
+            "city": "string",
+            "zipcode": "string",
+            "primary": true,
+            "state": "Maharashtra",
+            "country": "India"
+        }
+    ],
+    "profile": {
+        "board_id": 1,
+        "grade_id": 1,
+        "title": "string",
+        "dob": "2020-04-20"
+    },
+    "guardian": [
+        {
+            "first_name": "string",
+            "last_name": "string",
+            "phone": "9876543210",
+            "email": "string@abc.com",
+            "relationship": 1
+        }
+    ],
+    "password": 1234,
+    "username": "str2i222ng2",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "use1r@exeample.com",
+    "phone": "9876143211"
 }
 </code></pre>
 <blockquote>
@@ -196,22 +195,21 @@
 </blockquote>
 <pre><code>{
     "data": {
-        "id": 47,
+        "id": 83,
         "address": [
             {
                 "id": 1,
-                "user_type": 1,
+                "city": "string",
+                "state": "Maharashtra",
+                "zipcode": "string",
+                "primary": true,
                 "line_1": "string",
                 "line_2": "string",
                 "landmark": "string",
-                "city": "string",
-                "state": "Maharashtra",
-                "country": "India",
-                "zipcode": "string",
-                "primary": true
+                "country": "India"
             }
         ],
-        "student_profile": {
+        "profile": {
             "id": 1,
             "board": {
                 "id": 1,
@@ -219,7 +217,7 @@
             },
             "grade": {
                 "id": 1,
-                "title": "8"
+                "title": "1st"
             },
             "title": "string",
             "dob": "2020-04-20"
@@ -229,34 +227,95 @@
                 "id": 1,
                 "first_name": "string",
                 "last_name": "string",
-                "relationship": 1,
-                "phone_primary": "string",
-                "phone_secondary": "string",
-                "email": "string"
+                "phone": "9876543210",
+                "email": "string@abc.com",
+                "relationship": 1
             }
         ],
-        "email": "user@ex2ample.com",
-        "phone": "string",
+        "email": "use1r@exeample.com",
+        "phone": "9876143211",
         "user_type_char": "Student",
         "complete_name": "string string",
         "code": {
-            "id": 14,
-            "user": 47,
-            "code": 148837
+            "id": 1,
+            "user": 83,
+            "code": 280798
         },
         "last_login": null,
-        "username": "stri22ng2",
+        "username": "str2i222ng2",
         "first_name": "string",
         "last_name": "string",
         "is_active": true,
-        "date_joined": "2020-04-29T20:53:55.944338",
-        "user_type": 1,
-        "gender": "",
-        "verified": null
+        "date_joined": "2020-06-17T18:18:01.201351",
+        "gender": null,
+        "verified": null,
+        "user_type": 1
     }
 }
 </code></pre>
 <hr />
+<p><strong>POST</strong> <code>​/auth​/register/</code></p>
+<blockquote>
+<p>Request Schema (Optional)</p>
+</blockquote>
+<pre><code>{
+    "profile": {
+        "board_id": 1,
+        "grade_id": 1,
+        "title": "string",
+        "dob": "2020-04-20"
+    },
+    "user_type": 1,
+    "password": 1234,
+    "username": "straqwi4n52l2g9",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "user@example.com",
+    "phone": "9876993210"
+}
+</code></pre>
+<blockquote>
+<p>Response Schema (Optional)</p>
+</blockquote>
+<pre><code>{
+    "data": {
+        "id": 56,
+        "address": [],
+        "profile": {
+            "id": 3,
+            "board": {
+                "id": 1,
+                "title": "SSC"
+            },
+            "grade": {
+                "id": 1,
+                "title": "1st"
+            },
+            "title": "string",
+            "dob": "2020-04-20"
+        },
+        "guardian": [],
+        "email": "user@example.com",
+        "phone": "9876993210",
+        "user_type_char": "Student",
+        "complete_name": "string string",
+        "code": {
+            "id": 3,
+            "user": 56,
+            "code": 168705
+        },
+        "last_login": null,
+        "username": "straqwi4n52l2g9",
+        "first_name": "string",
+        "last_name": "string",
+        "is_active": true,
+        "date_joined": "2020-06-17T17:21:11.116851",
+        "gender": null,
+        "verified": null,
+        "user_type": 1
+    }
+}
+</code></pre>
 <h2 id="check-for-unique-email">Check for unique email</h2>
 <p><strong>GET</strong> <code>auth/user/unique_email_check/?email=user@example.com'</code></p>
 <p>Do no proceed without successful response.</p>

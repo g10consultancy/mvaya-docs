@@ -1,0 +1,14 @@
+site_name: Mvaya Documentation
+
+theme:
+  name: mkdocs
+  custom_dir: cinder
+#  colorscheme: dracula
+
+nav:
+  - Home: index.md
+  - API Guide:
+      - 'Authentication': api/authentication.md
+      - 'Registration': api/registration.md
+#      - 'Profiles': api/profiles.md
+      - 'Online': api/online.md
