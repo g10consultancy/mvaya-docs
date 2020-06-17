@@ -145,7 +145,7 @@ This related to all forms on Online content. Also knows as online classes/provid
                     },
                     "title": "English",
                     "featured": true,
-                    "price": "2999.00",
+                    "price": "2999",
                     "image": null,
                     "institute": 1
                 }
@@ -318,7 +318,7 @@ This related to all forms on Online content. Also knows as online classes/provid
                     },
                     "title": "English Course for III Standard",
                     "featured": false,
-                    "price": "7000.00",
+                    "price": "7000",
                     "image": null,
                     "institute": 5
                 },
@@ -342,7 +342,7 @@ This related to all forms on Online content. Also knows as online classes/provid
                     },
                     "title": "Engineering Drawing for XII",
                     "featured": true,
-                    "price": "9000.00",
+                    "price": "9000",
                     "image": null,
                     "institute": 8
                 },
@@ -366,7 +366,7 @@ This related to all forms on Online content. Also knows as online classes/provid
                     },
                     "title": "Maths for VIII Standard",
                     "featured": true,
-                    "price": "7000.00",
+                    "price": "7000",
                     "image": null,
                     "institute": 7
                 }
@@ -443,7 +443,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "Knowing Numbers",
                 "featured": true,
-                "price": "2500.00",
+                "price": "2500",
                 "image": null,
                 "institute": 1
             },
@@ -467,7 +467,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "Bioteachnology for XII Science",
                 "featured": true,
-                "price": "2500.00",
+                "price": "2500",
                 "image": null,
                 "institute": 3
             },
@@ -491,7 +491,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "History for IX Standard",
                 "featured": false,
-                "price": "3000.00",
+                "price": "3000",
                 "image": null,
                 "institute": 5
             },
@@ -515,7 +515,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "Computer Science for XII",
                 "featured": true,
-                "price": "8000.00",
+                "price": "8000",
                 "image": null,
                 "institute": 6
             },
@@ -539,7 +539,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "English Course for V Standard",
                 "featured": false,
-                "price": "5000.00",
+                "price": "5000",
                 "image": null,
                 "institute": 10
             },
@@ -563,7 +563,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "Engineering Drawing for XII",
                 "featured": true,
-                "price": "9000.00",
+                "price": "9000",
                 "image": null,
                 "institute": 8
             },
@@ -587,7 +587,7 @@ board | 5  | Pass ID of the parameter
                 },
                 "title": "Maths for VIII Standard",
                 "featured": true,
-                "price": "7000.00",
+                "price": "7000",
                 "image": null,
                 "institute": 7
             }
@@ -619,7 +619,7 @@ board | 5  | Pass ID of the parameter
             },
             "title": "Bioteachnology for XII Science",
             "featured": true,
-            "price": "2500.00",
+            "price": "2500",
             "image": null,
             "institute": 3
         }
