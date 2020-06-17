@@ -530,6 +530,43 @@
 <hr />
 <h2 id="courses">Courses</h2>
 <p><strong>GET</strong> <code>/profile/online/courses/</code></p>
+<p><strong>Available Filters</strong> </p>
+<table>
+<thead>
+<tr>
+<th>KEY</th>
+<th>VALUE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price_min</td>
+<td>300</td>
+<td>You need to use <code>price_max</code> if you use this filter</td>
+</tr>
+<tr>
+<td>price_max</td>
+<td>600</td>
+<td>You need to use <code>price_min</code> if you use this filter</td>
+</tr>
+<tr>
+<td>grade</td>
+<td>1</td>
+<td>Pass ID of the parameter</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>2</td>
+<td>Pass ID of the parameter</td>
+</tr>
+<tr>
+<td>board</td>
+<td>5</td>
+<td>Pass ID of the parameter</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>Response Schema (List w/ Pagination)</p>
 </blockquote>

@@ -12,3 +12,6 @@ nav:
       - 'Registration': api/registration.md
 #      - 'Profiles': api/profiles.md
       - 'Online': api/online.md
+
+markdown_extensions:
+    - 'tables'

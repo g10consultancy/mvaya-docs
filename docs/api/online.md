@@ -398,6 +398,18 @@ This related to all forms on Online content. Also knows as online classes/provid
 ## Courses
 **GET** `/profile/online/courses/`
 
+**Available Filters** 
+
+
+KEY | VALUE | DESCRIPTION
+------------ | ------------- | ------------
+price_min | 300  | You need to use `price_max` if you use this filter
+price_max | 600  | You need to use `price_min` if you use this filter
+grade | 1  | Pass ID of the parameter
+subject | 2  | Pass ID of the parameter
+board | 5  | Pass ID of the parameter
+
+
 > Response Schema (List w/ Pagination)
 
 
