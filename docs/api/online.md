@@ -4,7 +4,7 @@ This related to all forms on Online content. Also knows as online classes/provid
 
 ## Institute (List & Detail)
 
-**GET** `/profile/online/institute/`
+**GET** `online/institute/`
     
 > Response Schema (List)
 
@@ -62,7 +62,7 @@ This related to all forms on Online content. Also knows as online classes/provid
             }
         ]
     }
-**GET** `/profile/online/institute/1/`
+**GET** `online/institute/1/`
 
 
 > Response Schema (Detail)
@@ -176,7 +176,7 @@ This related to all forms on Online content. Also knows as online classes/provid
 
 ## Instructor (List & Detail)
 
-**GET** `/profile/online/instructor/`
+**GET** `online/instructor/`
 
 > Response Schema (List)
 
@@ -209,7 +209,7 @@ This related to all forms on Online content. Also knows as online classes/provid
         ]
     }
 
-**GET** `/profile/online/instructor/1/`
+**GET** `online/instructor/1/`
 
 
 > Response Schema (Detail)
@@ -396,7 +396,7 @@ This related to all forms on Online content. Also knows as online classes/provid
 ---
 
 ## Courses
-**GET** `/profile/online/courses/`
+**GET** `online/courses/`
 
 **Available Filters** 
 
@@ -416,7 +416,7 @@ board | 5  | Pass ID of the parameter
     {
         "page": 1,
         "next_page": 2,
-        "next_page_link": "http://165.22.214.137:8005/profile/online/courses/?page=2",
+        "next_page_link": "http://165.22.214.137:8005online/courses/?page=2",
         "previous_page": null,
         "previous_page_link": null,
         "count": 10,
@@ -594,7 +594,7 @@ board | 5  | Pass ID of the parameter
         ]
     }
 
-**GET** `/profile/online/courses/1/`
+**GET** `online/courses/1/`
 
 > Response Schema (Detail)
 
@@ -625,3 +625,12 @@ board | 5  | Pass ID of the parameter
         }
     }
 
+## Courses Flavours
+**GET** `online/courses/featured`
+> Featured Courses
+
+**GET** `online/courses/featured/competitive/`
+> Featured Competitive Courses
+
+**GET** `online/courses/language/`
+> Featured Language Courses

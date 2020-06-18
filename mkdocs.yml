@@ -10,8 +10,10 @@ nav:
   - API Guide:
       - 'Authentication': api/authentication.md
       - 'Registration': api/registration.md
-#      - 'Profiles': api/profiles.md
+      #      - 'Profiles': api/profiles.md
       - 'Online': api/online.md
+  - Coaching Panel:
+      - 'Batch': api/batch.md
 
 markdown_extensions:
-    - 'tables'
+  - 'tables'
